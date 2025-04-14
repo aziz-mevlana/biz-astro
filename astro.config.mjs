@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://biz24.tubit.org.tr",
+  site: "https://biz25.tubit.org.tr",
   integrations: [tailwind(), react(), sitemap()],
   devToolbar: {
     enabled: false
