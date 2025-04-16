@@ -31,6 +31,9 @@ import d11 from "../media/images/announcements/11.webp"
 import d12 from "../media/images/announcements/12.webp"
 
 // old events
+import tb25 from "../media/images/old-events/tb25.webp"
+import biz24 from "../media/images/old-events/biz24.webp"
+import k24 from "../media/images/old-events/k24.webp"
 import dgyz24 from "../media/images/old-events/dgyz24.webp"
 import yg24 from "../media/images/old-events/yg24.webp"
 import biz19 from "../media/images/old-events/biz19.webp"
@@ -91,7 +94,7 @@ import dayThreeTimeline from "../media/images/timeline/3-timeline.webp"
 
 ---
 
-<Layout title="BİZ2024" description="Bilişim ve İnovasyon Zirvesi 2024">
+<Layout title="BİZ2025" description="Bilişim ve İnovasyon Zirvesi 2025 - 6-7-8 Mayıs 2025 tarihlerinde Trakya Üniversitesi'nde">
 	<Header />
 	<div class="relative w-full">
 		<div class="bg-trans w-full absolute h-[200px] top-[-85px]"></div>
@@ -138,16 +141,16 @@ import dayThreeTimeline from "../media/images/timeline/3-timeline.webp"
 				</ReactCarousel>
 			</div>
 		</ContentSection>
-		<ContentSection href="biz24" title="Bilişim ve İnovasyon Zirvesi 2024">
+		<ContentSection href="biz25" title="Bilişim ve İnovasyon Zirvesi 2025">
 			<div class="px-14">
 				<p class="text-xl font-light lg:text-2xl font-origsans text-center">
 					Bilişim dünyasının öncü isimlerini bir araya getirmeye hazır
 					mısınız?
 				</p><br />
 				<p class="text-lg md:text-xl font-origsans font-light">
-					Tübit Kulübü olarak düzenlediğimiz BİZ24 etkinliği, bilişim
+					Tübit Kulübü olarak düzenlediğimiz BİZ25 etkinliği, bilişim
 					inovasyonunun kalbinde üç gün boyunca sizlerle olacak.
-					<strong>14-15-16 Mayıs</strong> tarihlerinde gerçekleşecek zirvemizde,
+					<strong>6-7-8 Mayıs</strong> tarihlerinde gerçekleşecek zirvemizde,
 					sektörün önde gelen yazılımcıları ilk iki günü dolduracak. Üçüncü
 					gün ise okulumuzun değerli mezunlarının katılımıyla taçlanacak.<br
 					/><br />
@@ -157,7 +160,7 @@ import dayThreeTimeline from "../media/images/timeline/3-timeline.webp"
 					düzenlenecek seminerlerde, gelen katılımcılarımız bilişim dünyasındaki
 					en güncel gelişmeleri uzmanlardan dinleme fırsatı bulacaklar.<br
 					/><br />
-					BİZ24 etkinliği, bilişimdeki son trendleri yakından takip etmek isteyen
+					BİZ25 etkinliği, bilişimdeki son trendleri yakından takip etmek isteyen
 					herkes için bir fırsat. <u>Kayıt olmayı unutmayın</u> ve bilişim
 					dünyasının öncülerini bir araya getiren bu zirvede bizimle birlikte
 					olun!
@@ -165,7 +168,7 @@ import dayThreeTimeline from "../media/images/timeline/3-timeline.webp"
 				<div class="flex justify-center pt-10">
 					<a class="text-center text-2xl bg-[#243D8F] text-white w-full max-w-80 py-7 px-14
 					 rounded-md hover:transform hover:scale-105 transition-all active:bg-[#0080FF]"
-					 href="https://forms.gle/WYaTzghgAvFHBjJ6A">Kayıt Ol</a>
+					 href="http://127.0.0.1:8000">Kayıt Ol</a>
 				</div>
 			</div>
 		</ContentSection>
@@ -239,8 +242,11 @@ import dayThreeTimeline from "../media/images/timeline/3-timeline.webp"
 		</ContentSection>
 		<ContentSection href="etkinlikler" title="Önceki Etkinliklerimiz">
 			<div class="flex flex-wrap items-center justify-evenly">
-				<EventCard lbid="old-events" desc="Dijital Genç Yapay Zeka Ekosistemi Tanışma Toplantısı 2024" src={dgyz24} />
-				<EventCard lbid="old-events" desc="Yazılımcılıktan Girişimciliğe 2024" src={yg24} />
+				<EventCard lbid="old-events" desc="Topluluklar Buluşuyor" src={tb25} />
+				<EventCard lbid="old-events" desc="Bilişim ve İnovasyon Zirvesi 2024" src={biz24} />
+				<EventCard lbid="old-events" desc="Kariyer Günleri 2025" src={k24} />
+				<EventCard lbid="old-events" desc="Dijital Genç Yapay Zeka Ekosistemi Tanışma Toplantısı 2025" src={dgyz24} />
+				<EventCard lbid="old-events" desc="Yazılımcılıktan Girişimciliğe 2025" src={yg24} />
 				<EventCard lbid="old-events" desc="Bilişim ve İnovasyon Zirvesi 2019" src={biz19} />
 				<EventCard lbid="old-events" desc="Kariyer Günleri 2018" src={k18} />
 				<EventCard lbid="old-events" desc="Bilişim ve İnovasyon Zirvesi 2018" src={biz18} />

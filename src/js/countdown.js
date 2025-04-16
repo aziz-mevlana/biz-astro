@@ -1,14 +1,14 @@
 // events first day
-let countdownTime = new Date("2024-05-14T10:00:00").getTime();
+let countdownTime = new Date("2025-05-06T10:00:00").getTime();
 let currentTime = new Date().getTime();
-// let currentTime = new Date("2024-05-15T14:44:55").getTime();
+// let currentTime = new Date("2025-05-15T14:44:55").getTime();
 let timeRemaining = countdownTime - currentTime;
 // let currenTimeCounter = setInterval(() => {
 //     currentTime += 1000;
 // }, 1000)
 
 if (timeRemaining > 0) {
-    countdownTimer(countdownTime, "14.05.2024", "10.00", "Etkinliğe Kalan", false);
+    countdownTimer(countdownTime, "06.05.2025", "10.00", "Etkinliğe Kalan", false);
 } else {
     showEventStatusContainer();
     updateEventStatus();
@@ -62,12 +62,12 @@ function countdownTimer(countdownTime, date, time, title, hideDay) {
 }
 
 function updateEventStatus() {
-    let dayOne = new Date("2024-05-14T10:00:00").getTime();
-    let dayOneEnd = new Date("2024-05-14T16:40:00").getTime();
-    let dayTwo = new Date("2024-05-15T10:00:00").getTime();
-    let dayTwoEnd = new Date("2024-05-15T16:40:00").getTime();
-    let dayThree = new Date("2024-05-16T10:00:00").getTime();
-    let dayThreeEnd = new Date("2024-05-16T16:40:00").getTime();
+    let dayOne = new Date("2025-05-06T10:00:00").getTime();
+    let dayOneEnd = new Date("2025-05-06T16:40:00").getTime();
+    let dayTwo = new Date("2025-05-07T10:00:00").getTime();
+    let dayTwoEnd = new Date("2025-05-07T16:40:00").getTime();
+    let dayThree = new Date("2025-05-08T10:00:00").getTime();
+    let dayThreeEnd = new Date("2025-05-08T16:40:00").getTime();
     if (dayOne - currentTime < 0 && dayOneEnd - currentTime > 0) {
         // first day
         // console.log("day one");
@@ -78,30 +78,30 @@ function updateEventStatus() {
         let nextEventSpeaker = document.getElementById("nextEventSpeaker");
         let nextEvent = document.getElementById("nextEvent");
         let nextEventContainer = document.getElementById("nextEventContainer");
-        currentEventDay.innerText = "14.05.2024 - 1. Gün";
+        currentEventDay.innerText = "06.05.2025 - 1. Gün";
 
         // first event is the day start
         let eventOne = dayOne; // 10.00
         let eventOneEnd = eventOne + 3600000; // + 1 hour (3600000ms, 1h) 11.00
 
         // orkun kayra akyüz
-        let eventTwo = new Date("2024-05-14T11:00:00").getTime(); // 11.00
+        let eventTwo = new Date("2025-05-06T11:00:00").getTime(); // 11.00
         let eventTwoEnd = eventTwo + 3600000; // + 1 hour (3600000ms, 1h) 12.00
 
         // ara
-        let eventThree = new Date("2024-05-14T12:00:00").getTime(); // 12.00
+        let eventThree = new Date("2025-05-06T12:00:00").getTime(); // 12.00
         let eventThreeEnd = eventThree + 4500000; // + 1.25 hour (4500000ms, 75m, 1h 15m) 13.15
 
         // murat mirgun ercan
-        let eventFour = new Date("2024-05-14T13:15:00").getTime(); // 13.15
+        let eventFour = new Date("2025-05-06T13:15:00").getTime(); // 13.15
         let eventFourEnd = eventFour + 3600000; // + 1 hour (3600000ms, 1h) 14.15
 
         // kahoot
-        let eventFive = new Date("2024-05-14T14:30:00").getTime(); // 14.30
+        let eventFive = new Date("2025-05-06T14:30:00").getTime(); // 14.30
         let eventFiveEnd = eventFive + 1800000; // .5 hour (1800000ms, 30m) 15.00
 
         // baki cubuk
-        let eventSix = new Date("2024-05-14T15:15:00").getTime(); // 15.15
+        let eventSix = new Date("2025-05-06T15:15:00").getTime(); // 15.15
         let eventSixEnd = eventSix + 6000000; // + 1.75 hour (6000000ms, 1h 40m) 16.40
 
         // using a truth table to prevent unnecessary updates
@@ -110,7 +110,7 @@ function updateEventStatus() {
             if (eventOne - currentTime < 0 && eventOneEnd - currentTime > 0 && !truthArray[0]) {
                 truthArray[0] = true;
                 currentEventSpeaker.innerText = "";
-                currentEvent.innerText = "BİZ2024 Açılış Töreni";
+                currentEvent.innerText = "BİZ2025 Açılış Töreni";
                 nextEventContainer.classList.remove("hidden");
                 nextEvent.innerText = "Girişimcilik ve Marka Yaratma";
                 nextEventSpeaker.innerText = "Orkun Kayra AKYÜZ";
@@ -182,13 +182,13 @@ function updateEventStatus() {
             } else if (eventSixEnd - currentTime < 0 && dayTwo - currentTime > 0) {
                 // the time between event days
                 clearInterval(eventUpdate);
-                countdownTimer(dayTwo, "15.05.2024", "10.00", "2. Güne Kalan", true)
+                countdownTimer(dayTwo, "07.05.2025", "10.00", "2. Güne Kalan", true)
             }
         }, 1000);
     } else if (dayOneEnd - currentTime < 0 && dayTwo - currentTime > 0) {
         // time between end of the first day and start of the second day
         // console.log("day one ended, day two haven't started yet");
-        countdownTimer(dayTwo, "15.05.2024", "10.00", "2. Güne Kalan", true)
+        countdownTimer(dayTwo, "07.05.2025", "10.00", "2. Güne Kalan", true)
     } else if (dayTwo - currentTime < 0 && dayTwoEnd - currentTime > 0) {
         // second day
         // console.log("day two");
@@ -199,34 +199,34 @@ function updateEventStatus() {
         let nextEventSpeaker = document.getElementById("nextEventSpeaker");
         let nextEvent = document.getElementById("nextEvent");
         let nextEventContainer = document.getElementById("nextEventContainer");
-        currentEventDay.innerText = "15.05.2024 - 2. Gün";
+        currentEventDay.innerText = "07.05.2025 - 2. Gün";
 
         // first event is the day start
         let eventOne = dayTwo; // 10.00
         let eventOneEnd = eventOne + 900000; // + .25 hour (900000ms, 15m) 10.15
 
         // doğan dağdelen
-        let eventTwo = new Date("2024-05-15T10:15:00").getTime(); // 10.15
+        let eventTwo = new Date("2025-05-07T10:15:00").getTime(); // 10.15
         let eventTwoEnd = eventTwo + 3600000; // + 1 hour (3600000ms, 1h) 11.15
 
         // ahmet buğra çakıcı
-        let eventThree = new Date("2024-05-15T11:30:00").getTime(); // 11.30
+        let eventThree = new Date("2025-05-07T11:30:00").getTime(); // 11.30
         let eventThreeEnd = eventThree + 3600000; // + 1 hour (3600000ms, 1h) 12.30
 
         // ara
-        let eventFour = new Date("2024-05-15T12:30:00").getTime(); // 12.30
+        let eventFour = new Date("2025-05-07T12:30:00").getTime(); // 12.30
         let eventFourEnd = eventFour + 3600000; // + 1 hour (3600000ms, 1h) 13.30
 
         // daron yöndem
-        let eventFive = new Date("2024-05-15T13:30:00").getTime(); // 13.30
+        let eventFive = new Date("2025-05-07T13:30:00").getTime(); // 13.30
         let eventFiveEnd = eventFive + 3600000; // 1 hour (3600000ms, 1h) 14.30
 
         // enes rodop
-        let eventSix = new Date("2024-05-15T14:45:00").getTime(); // 14.45
+        let eventSix = new Date("2025-05-07T14:45:00").getTime(); // 14.45
         let eventSixEnd = eventSix + 3600000; // + 1 hour (3600000ms, 1h) 15.45
 
         // çekiliş
-        let eventSeven = new Date("2024-05-15T16:00:00").getTime(); // 16.00
+        let eventSeven = new Date("2025-05-07T16:00:00").getTime(); // 16.00
         let eventSevenEnd = eventSeven + 2400000; // + .75 hour (2400000ms, 45m) 16.40
 
         // using a truth table to prevent unnecessary updates
@@ -236,7 +236,7 @@ function updateEventStatus() {
                 // 10.00 - 10.15
                 truthArray[0] = true;
                 currentEventSpeaker.innerText = "";
-                currentEvent.innerText = "BİZ2024 Açılış Töreni";
+                currentEvent.innerText = "BİZ2025 Açılış Töreni";
                 nextEventContainer.classList.remove("hidden");
                 nextEvent.innerText = "Nasıl Yazılımcı Olunmaz";
                 nextEventSpeaker.innerText = "Doğan DAĞDELEN";
@@ -335,13 +335,13 @@ function updateEventStatus() {
             } else if (eventSevenEnd - currentTime < 0 && dayThree - currentTime > 0) {
                 // the time between event days
                 clearInterval(eventUpdate);
-                countdownTimer(dayThree, "16.05.2024", "10.00", "3. Güne Kalan", true)
+                countdownTimer(dayThree, "08.05.2025", "10.00", "3. Güne Kalan", true)
             }
         }, 1000);
     } else if (dayTwoEnd - currentTime < 0 && dayThree - currentTime > 0) {
         // time between end of the second day and start of the third day
         // console.log("day two ended, day three haven't started yet");
-        countdownTimer(dayThree, "16.05.2024", "10.00", "3. Güne Kalan", true)
+        countdownTimer(dayThree, "08.05.2025", "10.00", "3. Güne Kalan", true)
     } else if (dayThree - currentTime < 0 && dayThreeEnd - currentTime > 0) {
         // third day
         // console.log("day three");
@@ -352,7 +352,7 @@ function updateEventStatus() {
         let nextEventSpeaker = document.getElementById("nextEventSpeaker");
         let nextEvent = document.getElementById("nextEvent");
         let nextEventContainer = document.getElementById("nextEventContainer");
-        currentEventDay.innerText = "16.05.2024 - 3. Gün";
+        currentEventDay.innerText = "08.05.2025 - 3. Gün";
 
         // using a flag to prevent unnecessary updates
         let updated = false;

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://biz24.tubit.org.tr/sitemap-index.xml
+Sitemap: https://biz25.tubit.org.tr/sitemap-index.xml
