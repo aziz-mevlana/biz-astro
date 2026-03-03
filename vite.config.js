@@ -2,32 +2,27 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import node from "@astrojs/node";  // Node adapter'ını import et
 
+// https://astro.build/config
 export default defineConfig({
-  site: "http://209.38.253.102",
+  site: "https://tubit.org.tr",
   integrations: [tailwind(), react(), sitemap()],
-  output: 'server',
-  adapter: node({  // Node adapter'ını ekle
-    mode: 'standalone'
-  }),
   devToolbar: {
     enabled: false
   },
   server: {
-    host: '0.0.0.0',
+    host: true, // tüm IP'lere izin ver
     port: 4321,
   },
-
   build: {
     format: 'directory',
     assets: '_assets',
     inlineStylesheets: 'never'
   },
-  redirects: {
-    '/kayit-ol': {
-      status: 301,
-      destination: 'http://209.38.253.102/etkinlik/kayit-ol'
+  vite: {
+    server: {
+      host: true, // tüm IP'lere izin ver
+      strictPort: true,
     }
   }
 });
