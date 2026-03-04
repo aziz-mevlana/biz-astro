@@ -1,5 +1,5 @@
 // events first day
-let countdownTime = new Date("2025-05-06T10:00:00").getTime();
+let countdownTime = new Date("2026-05-05T10:00:00").getTime();
 let currentTime = new Date().getTime();
 // let currentTime = new Date("2025-05-15T14:44:55").getTime();
 let timeRemaining = countdownTime - currentTime;
@@ -8,7 +8,7 @@ let timeRemaining = countdownTime - currentTime;
 // }, 1000)
 
 if (timeRemaining > 0) {
-    countdownTimer(countdownTime, "06.05.2025", "10.00", "Etkinliğe Kalan", false);
+    countdownTimer(countdownTime, "05.05.2026", "10.00", "Etkinliğe Kalan", false);
 } else {
     showEventStatusContainer();
     updateEventStatus();
@@ -66,12 +66,12 @@ function updateEventStatus() {
     const eventEndedContainer = document.getElementById("eventEndedContainer");
     const eventEndedTitle = eventEndedContainer.querySelector("h1");
     
-    // 6 Mayıs - 1. Gün
-    if (currentDate.getDate() === 6 && currentDate.getMonth() === 4) {
+    // 5 Mayıs - 1. Gün
+    if (currentDate.getDate() === 5 && currentDate.getMonth() === 4) {
         eventEndedTitle.innerText = "Bilişim ve İnovasyon Zirvesi 1. Gün Sona Erdi";
     }
-    // 7 Mayıs - 2. Gün
-    else if (currentDate.getDate() === 7 && currentDate.getMonth() === 4) {
+    // 6 Mayıs - 2. Gün
+    else if (currentDate.getDate() === 6 && currentDate.getMonth() === 4) {
         const currentHour = currentDate.getHours();
         const currentMinute = currentDate.getMinutes();
         const currentTime = currentHour * 60 + currentMinute;
@@ -89,8 +89,8 @@ function updateEventStatus() {
             eventEndedTitle.innerText = "Bilişim ve İnovasyon Zirvesi 2. Gün Sona Erdi";
         }
     }
-    // 8 Mayıs - 3. Gün
-    else if (currentDate.getDate() === 8 && currentDate.getMonth() === 4) {
+    // 7 Mayıs - 3. Gün
+    else if (currentDate.getDate() === 7 && currentDate.getMonth() === 4) {
         const currentHour = currentDate.getHours();
         const currentMinute = currentDate.getMinutes();
         const currentTime = currentHour * 60 + currentMinute;
@@ -108,8 +108,8 @@ function updateEventStatus() {
             eventEndedTitle.innerText = "Bilişim ve İnovasyon Zirvesi 3. Gün Sona Erdi";
         }
     }
-    // 9 Mayıs ve sonrası
-    else if (currentDate.getDate() >= 9 && currentDate.getMonth() === 4) {
+    // 8 Mayıs ve sonrası
+    else if (currentDate.getDate() >= 8 && currentDate.getMonth() === 4) {
         eventEndedTitle.innerText = "VI. Bilişim ve İnovasyon Zirvesi Sona Erdi";
     }
     

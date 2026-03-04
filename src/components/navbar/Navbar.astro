@@ -2,19 +2,26 @@
 import { Image } from "astro:assets"
 import tubitLogo from "../../media/images/website/tubit-logo.svg"
 
-import Biz25Logo from "./Biz25Logo.astro"
+import BizLogo from "./BizLogo.astro"
 import NavListItem from "./NavListItem.astro"
 import NavHamburgerMenu from "./NavHamburgerMenu.astro"
 import NavHamburgerOpenBtn from "./NavHamburgerOpenBtn.astro"
 ---
 <nav class="relative flex flex-col bg-zinc-500 bg-opacity-5">
     <div class="flex items-center justify-between px-8 py-6">
-        <Biz25Logo />
+        <BizLogo />
         <div class="hidden ll:block">
             <ul>
                 <NavListItem name="Program" href="#program"/>
                 <NavListItem name="Duyurular" href="#duyurular"/>
-                <NavListItem name="Etkinlik Hakkında" href="#biz25"/>
+                <li class="inline mx-5 transition-all xl:mx-8 hover:text-yellow-200 xl:text-xl text-shadow relative group">
+                    <span class="cursor-pointer"> <a href="#biz26">Etkinliklerimiz</a></span>
+                    <ul class="absolute left-0 mt-2 w-36 bg-zinc-800 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 text-center">
+                        <li><a class="block py-2 text-white hover:text-yellow-200" href="">Zirve 2026</a></li>
+                        <li><a class="block py-2 text-white hover:text-yellow-200" href="">Zirve 2025</a></li>
+                        <li><a class="block py-2 text-white hover:text-yellow-200" href="">Zirve 2024</a></li>
+                    </ul>
+                </li>
                 <NavListItem name="Ekibimiz" href="#ekibimiz"/>
                 <NavListItem name="Sponsorlar" href="#sponsorlar"/>
                 <NavListItem name="Kayıt Ol" href="http://tubit.org.tr/etkinlik"/>
