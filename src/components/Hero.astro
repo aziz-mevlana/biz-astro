@@ -13,7 +13,7 @@ import youtubeLogo from "../media/images/website/socials/youtube.svg";
         <Image
             src={bizLogo}
             alt="BİZ24 Logo"
-            class="w-[400px] h-auto object-contain my-10 drop-shadow-lg"
+            class="w-[240px] sm:w-[300px] md:w-[400px] h-auto object-contain my-10 drop-shadow-lg"
             loading={"eager"}
         />
         <div id="eventEndedContainer" class="hidden flex-col px-2 md:px-0">
@@ -21,7 +21,7 @@ import youtubeLogo from "../media/images/website/socials/youtube.svg";
                 VI. Bilişim ve İnovasyon Zirvesi Sona Erdi
             </h1>
             <p class="text-center mt-2">Daha fazlası için TÜBİT sosyal medya hesaplarını takipte kalın</p>
-            <div class="mt-5 mx-9">
+            <div class="mt-5 mx-4 sm:mx-9">
                 <div class="flex justify-around">
                     <SocialsItem
                         href="https://twitter.com/kycubyo_tubit"
@@ -98,24 +98,24 @@ import youtubeLogo from "../media/images/website/socials/youtube.svg";
         <h1 id="eventCountdownTitle" class="hidden text-3xl md:text-5xl">
             Etkinliğe Kalan
         </h1>
-        <div id="eventCountdownTimer" class="hidden flex-row items-center px-4">
+        <div id="eventCountdownTimer" class="hidden flex-row items-center px-2 sm:px-4">
             <div id="countdownDay" class="flex flex-col">
-                <p class="text-5xl text-center sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownDay" > 00 </p>
+                <p class="text-3xl text-center sm:text-5xl sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownDay" > 00 </p>
                 <p class="text-xs text-center md:text-2xl">Gün</p>
             </div>
-            <p id="countdownDayColon" class="mx-2 text-3xl text-center sm:text-4xl md:text-6xl md:mx-4" > : </p>
+            <p id="countdownDayColon" class="mx-1 text-2xl text-center sm:mx-2 sm:text-3xl md:text-6xl md:mx-4" > : </p>
             <div class="flex flex-col">
-                <p class="text-5xl text-center sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownHour" > 00 </p>
+                <p class="text-3xl text-center sm:text-5xl sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownHour" > 00 </p>
                 <p class="text-xs text-center md:text-2xl">Saat</p>
             </div>
-            <p class="mx-2 text-3xl text-center sm:text-4xl md:text-6xl md:mx-4" > : </p>
+            <p class="mx-1 text-2xl text-center sm:mx-2 sm:text-3xl md:text-6xl md:mx-4" > : </p>
             <div class="flex flex-col">
-                <p class="text-5xl text-center sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownMinute" > 00 </p>
+                <p class="text-3xl text-center sm:text-5xl sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownMinute" > 00 </p>
                 <p class="text-xs text-center md:text-2xl">Dakika</p>
             </div>
-            <p class="mx-2 text-3xl text-center sm:text-4xl md:text-6xl md:mx-4" > : </p>
+            <p class="mx-1 text-2xl text-center sm:mx-2 sm:text-3xl md:text-6xl md:mx-4" > : </p>
             <div class="flex flex-col">
-                <p class="text-5xl text-center sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownSecond" > 00 </p>
+                <p class="text-3xl text-center sm:text-5xl sm:text-6xl md:text-8xl md:mr-2" id="eventCountdownSecond" > 00 </p>
                 <p class="text-xs text-center md:text-2xl">Saniye</p>
             </div>
         </div>

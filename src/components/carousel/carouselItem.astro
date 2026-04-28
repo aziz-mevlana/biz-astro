@@ -6,10 +6,17 @@ interface Props {
     src: ImageMetadata;
     alt: string;
     loading?: "eager" | "lazy";
+    lbid?: string;
 }
 
-const { src, alt, loading } = Astro.props;
+const { src, alt, loading, lbid } = Astro.props;
 ---
 <div class="flex items-center justify-center w-full">
-    <Image src={src} alt={alt} loading={loading ? loading : "eager"}/>
+    {lbid ? (
+        <a data-fslightbox={lbid} href={src.src}>
+            <Image src={src} alt={alt} loading={loading ? loading : "eager"}/>
+        </a>
+    ) : (
+        <Image src={src} alt={alt} loading={loading ? loading : "eager"}/>
+    )}
 </div>

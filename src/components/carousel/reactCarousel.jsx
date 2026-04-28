@@ -10,7 +10,7 @@ import '../../css/carousel.css';
 
 export default function reactCarousel(props) {
     return (
-        <div className='w-full lg:px-14 xl:px-28 select-none'>
+        <div className='w-full select-none'>
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}

@@ -2,19 +2,16 @@
 interface Props {
     name: string;
     href: string;
-    marginBtm?: boolean;
 }
 
-const { name, href, marginBtm } = Astro.props;
-
-const classList = "w-[60vw] grow " + (marginBtm ? "mb-10" : "");
+const { name, href } = Astro.props;
 ---
 
-<li class={classList}>
+<li>
     <a
         aria-controls="hamburger-menu"
         data-drawer-hide="hamburger-menu"
-        class="flex items-center justify-center w-full h-full"
+        class="flex items-center justify-center w-full py-2"
         href={href}>
         <span>{name}</span>
     </a>

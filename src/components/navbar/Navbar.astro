@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets"
 import tubitLogo from "../../media/images/website/tubit-logo.svg"
+import davetiye25 from "../../media/images/old-events/davetiye25.webp"
+import davetiye26 from "../../media/images/old-events/davetiye26.webp"
 
 import BizLogo from "./BizLogo.astro"
 import NavListItem from "./NavListItem.astro"
@@ -8,18 +10,17 @@ import NavHamburgerMenu from "./NavHamburgerMenu.astro"
 import NavHamburgerOpenBtn from "./NavHamburgerOpenBtn.astro"
 ---
 <nav class="relative flex flex-col bg-zinc-500 bg-opacity-5">
-    <div class="flex items-center justify-between px-8 py-6">
+    <div class="flex items-center justify-between px-4 sm:px-8 py-6">
         <BizLogo />
         <div class="hidden ll:block">
             <ul>
-                <NavListItem name="Program" href="#program"/>
                 <NavListItem name="Duyurular" href="#duyurular"/>
+                <NavListItem name="Program" href="#program"/>
                 <li class="inline mx-5 transition-all xl:mx-8 hover:text-yellow-200 xl:text-xl text-shadow relative group">
-                    <span class="cursor-pointer"> <a href="#biz26">Etkinliklerimiz</a></span>
+                    <span class="cursor-pointer">Davetiyeler</span>
                     <ul class="absolute left-0 mt-2 w-36 bg-zinc-800 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 text-center">
-                        <li><a class="block py-2 text-white hover:text-yellow-200" href="">Zirve 2026</a></li>
-                        <li><a class="block py-2 text-white hover:text-yellow-200" href="">Zirve 2025</a></li>
-                        <li><a class="block py-2 text-white hover:text-yellow-200" href="">Zirve 2024</a></li>
+                        <li><a class="block py-2 text-white hover:text-yellow-200 cursor-pointer" id="zirve2026-link">Zirve 2026</a></li>
+                        <li><a class="block py-2 text-white hover:text-yellow-200 cursor-pointer" id="zirve2025-link">Zirve 2025</a></li>
                     </ul>
                 </li>
                 <NavListItem name="Ekibimiz" href="#ekibimiz"/>
@@ -35,4 +36,64 @@ import NavHamburgerOpenBtn from "./NavHamburgerOpenBtn.astro"
     <NavHamburgerMenu />
 </nav>
 
-<script src="../../js/drawer.js"></script>
+<div id="davetiye-modal" class="hidden fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-80">
+    <div class="relative max-w-3xl max-h-[90vh] p-4">
+        <button id="davetiye-modal-close" class="absolute -top-10 -right-2 md:-top-4 md:-right-4 text-white hover:text-yellow-200 transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <img id="davetiye-modal-img" src="" alt="Davetiye" class="max-w-full max-h-[85vh] object-contain rounded-lg" />
+    </div>
+</div>
+
+<script define:vars={{ davetiye25Src: davetiye25.src, davetiye26Src: davetiye26.src }}>
+    document.addEventListener('DOMContentLoaded', function() {
+        const zirve2025Link = document.getElementById('zirve2025-link');
+        const zirve2026Link = document.getElementById('zirve2026-link');
+        const modal = document.getElementById('davetiye-modal');
+        const modalImg = document.getElementById('davetiye-modal-img');
+        const modalClose = document.getElementById('davetiye-modal-close');
+        
+        function openModal(imgSrc) {
+            modalImg.src = imgSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        
+        window.openDavetiyeModal = openModal;
+        window.davetiye25Src = davetiye25Src;
+        window.davetiye26Src = davetiye26Src;
+        
+        if (zirve2025Link) {
+            zirve2025Link.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(davetiye25Src);
+            });
+        }
+        
+        if (zirve2026Link) {
+            zirve2026Link.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(davetiye26Src);
+            });
+        }
+        
+        if (modalClose) {
+            modalClose.addEventListener('click', closeModal);
+        }
+        
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+    });
+</script>

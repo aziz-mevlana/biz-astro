@@ -15,12 +15,30 @@ import NavHamburgerMenuItem from "./NavHamburgerMenuItem.astro"
             <BizLogo />
             <NavHamburgerCloseBtn />
         </div>
-        <ul class="flex flex-col items-center py-12 text-xl justify-evenly grow" >
-            <NavHamburgerMenuItem name="Program" href="#program" marginBtm/>
-            <NavHamburgerMenuItem name="Duyurular" href="#duyurular" marginBtm/>
-            <NavHamburgerMenuItem name="Etkinlik Hakkında" href="#biz25" marginBtm/>
-            <NavHamburgerMenuItem name="Ekibimiz" href="#ekibimiz" marginBtm/>
-            <NavHamburgerMenuItem name="Sponsorlar" href="#sponsorlar" marginBtm/>
+        <ul class="flex flex-col items-center py-12 text-xl gap-8 grow" >
+            <NavHamburgerMenuItem name="Program" href="#program"/>
+            <NavHamburgerMenuItem name="Duyurular" href="#duyurular"/>
+            <li class="flex flex-col items-center">
+                <button
+                    class="flex items-center justify-center py-2"
+                    id="mobile-etkinliklerimiz-btn"
+                >
+                    <span>Davetiyeler</span>
+                    <svg class="w-4 h-4 ml-2 transition-transform" id="mobile-etkinliklerimiz-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul class="hidden flex-col items-center gap-4 text-lg" id="mobile-etkinliklerimiz-menu">
+                    <li>
+                        <a class="hover:text-yellow-200 cursor-pointer" id="mobile-zirve2026-link">Zirve 2026</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-yellow-200 cursor-pointer" id="mobile-zirve2025-link">Zirve 2025</a>
+                    </li>
+                </ul>
+            </li>
+            <NavHamburgerMenuItem name="Ekibimiz" href="#ekibimiz"/>
+            <NavHamburgerMenuItem name="Sponsorlar" href="#sponsorlar"/>
             <NavHamburgerMenuItem name="Kayıt Ol" href="http://tubit.org.tr/etkinlik" />
         </ul>
         <div class="flex justify-center mb-12">
@@ -30,3 +48,39 @@ import NavHamburgerMenuItem from "./NavHamburgerMenuItem.astro"
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileBtn = document.getElementById('mobile-etkinliklerimiz-btn');
+        const mobileMenu = document.getElementById('mobile-etkinliklerimiz-menu');
+        const mobileArrow = document.getElementById('mobile-etkinliklerimiz-arrow');
+        const mobileZirve2025 = document.getElementById('mobile-zirve2025-link');
+        const mobileZirve2026 = document.getElementById('mobile-zirve2026-link');
+        
+        if (mobileBtn && mobileMenu && mobileArrow) {
+            mobileBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                mobileArrow.classList.toggle('rotate-180');
+            });
+        }
+        
+        if (mobileZirve2025) {
+            mobileZirve2025.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (window.openDavetiyeModal && window.davetiye25Src) {
+                    window.openDavetiyeModal(window.davetiye25Src);
+                }
+            });
+        }
+        
+        if (mobileZirve2026) {
+            mobileZirve2026.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (window.openDavetiyeModal && window.davetiye26Src) {
+                    window.openDavetiyeModal(window.davetiye26Src);
+                }
+            });
+        }
+    });
+</script>
