@@ -10,12 +10,12 @@ import NavHamburgerMenuItem from "./NavHamburgerMenuItem.astro"
     id="hamburger-menu"
     class="fixed top-0 left-0 right-0 z-40 w-full h-full transition-transform -translate-y-full bg-blue-950"
 >
-    <div class="flex flex-col h-full">
-        <div class="flex items-center justify-between px-8 py-6">
+    <div class="flex flex-col h-full overflow-y-auto">
+        <div class="flex items-center justify-between px-8 py-6 landscape:py-3">
             <BizLogo />
             <NavHamburgerCloseBtn />
         </div>
-        <ul class="flex flex-col items-center py-12 text-xl gap-8 grow" >
+        <ul class="flex flex-col items-center py-12 landscape:py-4 text-xl landscape:text-base gap-8 landscape:gap-3 grow" >
             <NavHamburgerMenuItem name="Program" href="#program"/>
             <NavHamburgerMenuItem name="Duyurular" href="#duyurular"/>
             <li class="flex flex-col items-center">
@@ -41,9 +41,9 @@ import NavHamburgerMenuItem from "./NavHamburgerMenuItem.astro"
             <NavHamburgerMenuItem name="Sponsorlar" href="#sponsorlar"/>
             <NavHamburgerMenuItem name="Kayıt Ol" href="http://tubit.org.tr/etkinlik" />
         </ul>
-        <div class="flex justify-center mb-12">
+        <div class="flex justify-center mb-12 landscape:mb-4">
             <a class="shrink-0" href="https://tubit.trakya.edu.tr" target="_blank" rel="noopener noreferrer" title="TÜBİT" >
-                <Image src={tubitLogo} alt="TÜBİT" class="w-[100px] h-[60px]" loading={"eager"} />
+                <Image src={tubitLogo} alt="TÜBİT" class="w-[100px] h-[60px] landscape:w-[80px] landscape:h-[48px]" loading={"eager"} />
             </a>
         </div>
     </div>

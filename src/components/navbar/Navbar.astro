@@ -10,7 +10,7 @@ import NavHamburgerMenu from "./NavHamburgerMenu.astro"
 import NavHamburgerOpenBtn from "./NavHamburgerOpenBtn.astro"
 ---
 <nav class="relative flex flex-col bg-zinc-500 bg-opacity-5">
-    <div class="flex items-center justify-between px-4 sm:px-8 py-6">
+    <div class="flex items-center justify-between px-4 sm:px-8 py-6 landscape:py-3">
         <BizLogo />
         <div class="hidden ll:block">
             <ul>
@@ -29,7 +29,7 @@ import NavHamburgerOpenBtn from "./NavHamburgerOpenBtn.astro"
             </ul>
         </div>
         <a class="hidden shrink-0 ll:block" href="https://tubit.trakya.edu.tr" target="_blank" rel="noopener noreferrer" title="TÜBİT" >
-            <Image src={tubitLogo} alt="TÜBİT" class="w-[100px] h-[60px]" loading={"eager"}/>
+            <Image src={tubitLogo} alt="TÜBİT" class="w-[100px] h-[60px] landscape:w-[80px] landscape:h-[48px]" loading={"eager"}/>
         </a>
         <NavHamburgerOpenBtn/>
     </div>
@@ -97,3 +97,4 @@ import NavHamburgerOpenBtn from "./NavHamburgerOpenBtn.astro"
         }
     });
 </script>
+<script src="../../js/drawer.js"></script>
